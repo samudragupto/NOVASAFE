@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safe Route Navigation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-screen w-full flex-col">
+<!-- Map View -->
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" data-alt="A dark-themed map of a city in India with a bright blue highlighted safe route." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAO5Bk8-e23h-DjTDiZK6H33GBPSiSnjMuOOTmhOPJ5yBiFJJxCzeV5M_9eU-nB73j15-pqlc8xksMbMJzQJ_UK5obUBJxCuHYd0NtguChU_XPvHMA00g7kHQC_bKtoC6VeKyuZgjMpjPGwU5ysksecHaG5tMZ40mnK_auOyod_L0zaHUWCDVbvO69s6fdGkIzKYpjHK0fZziNAZ0hg2EgDHLPwQM-BFTaTtovVmXIfXfvb9ObrPfnYpJtinaakMUb36DIVH7z9hq_D');">
+</div>
+<!-- UI Overlay -->
+<div class="relative z-10 flex h-full flex-col justify-between p-4 pb-0 sm:p-6 sm:pb-0">
+<!-- Top Section: Turn-by-Turn Card -->
+<div class="flex flex-col gap-4">
+<div class="flex items-stretch justify-between gap-3 rounded-xl bg-background-light/90 p-4 shadow-lg backdrop-blur-sm dark:bg-background-dark/90">
+<div class="flex flex-col gap-1.5 flex-[2_2_0px]">
+<p class="text-sm font-normal text-gray-600 dark:text-gray-400">Next Maneuver</p>
+<p class="text-xl font-bold leading-tight text-gray-900 dark:text-white">Turn left in 200m</p>
+<p class="text-sm font-normal text-gray-600 dark:text-gray-400">Marine Drive</p>
+</div>
+<div class="flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-primary">turn_sharp_left</span>
+</div>
+</div>
+</div>
+<!-- Side Controls: Map Tools & FABs -->
+<div class="pointer-events-none absolute inset-x-0 bottom-0 top-0 flex items-center justify-end px-4 sm:px-6">
+<div class="pointer-events-auto flex flex-col items-end gap-3">
+<div class="flex flex-col gap-0.5 shadow-lg">
+<button class="flex size-11 items-center justify-center rounded-t-lg bg-background-light/90 backdrop-blur-sm dark:bg-background-dark/90">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">add</span>
+</button>
+<button class="flex size-11 items-center justify-center rounded-b-lg bg-background-light/90 backdrop-blur-sm dark:bg-background-dark/90">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">remove</span>
+</button>
+</div>
+<button class="flex size-11 items-center justify-center rounded-lg bg-background-light/90 shadow-lg backdrop-blur-sm dark:bg-background-dark/90">
+<span class="material-symbols-outlined text-gray-900 dark:text-white">navigation</span>
+</button>
+<div class="h-8"></div> <!-- Spacer -->
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-amber-500 text-white text-base font-bold leading-normal tracking-[0.015em] min-w-0 w-14 shadow-lg">
+<span class="material-symbols-outlined">priority_high</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] min-w-0 gap-3 pl-4 pr-5 shadow-lg">
+<span class="material-symbols-outlined">share</span>
+<span class="truncate">Share</span>
+</button>
+</div>
+</div>
+<!-- Bottom Sheet: Route Info -->
+<div class="mb-6 mt-auto flex flex-col self-center w-full max-w-2xl">
+<div class="rounded-xl bg-background-light/90 p-4 pt-0 shadow-lg backdrop-blur-sm dark:bg-background-dark/90">
+<div class="grid grid-cols-2">
+<div class="flex flex-col gap-1 py-4 pr-2">
+<p class="text-sm font-normal text-gray-600 dark:text-gray-400">ETA</p>
+<p class="text-base font-medium text-gray-900 dark:text-white">10:45 PM</p>
+</div>
+<div class="flex flex-col gap-1 py-4 pl-2">
+<p class="text-sm font-normal text-gray-600 dark:text-gray-400">Remaining</p>
+<p class="text-base font-medium text-gray-900 dark:text-white">2.5 km</p>
+</div>
+<div class="flex flex-col gap-1 border-t border-solid border-gray-200 dark:border-white/20 py-4 pr-2 col-span-2">
+<p class="text-sm font-normal text-gray-600 dark:text-gray-400">Current Street</p>
+<p class="text-base font-medium text-gray-900 dark:text-white">Mahatma Gandhi Road</p>
+</div>
+</div>
+<button class="w-full h-12 flex items-center justify-center bg-red-600 text-white font-bold rounded-lg text-base">End Trip</button>
+</div>
+</div>
+</div>
+</div>
+</body></html>

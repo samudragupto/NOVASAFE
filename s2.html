@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safe Route Finder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4CAF50",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="absolute inset-0 h-full w-full">
+<div class="h-full w-full bg-cover bg-center" data-alt="A stylized, dark-themed map of a city in India showing streets and landmarks." data-location="India" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgX00o9viDEZWmEuAD2vU6fiWTTaBKY0Z2SBVSECJtue7BeHwymg94CnnJxBPmG4se74btrFrqopE5Fs_ydhihWW4FZuL_LhCmgb4TqtDoqcqgUxObcrjWoX8BOy1rV7xKJZ8lmv00m9nl9AveuRcWlmcCqtIOQrNQCMHXjTBTp7k0_uRrcLpkOyo1bnvZUD8BPId22dr_gxH5mWfcJMsmnd5_hPFKgHgQmUQjeJB6iY1jhc95-1nQLdjIuTqgNtJP4c9aR41CRZu0");'></div>
+<div class="absolute inset-0 bg-black/50"></div>
+</div>
+<div class="relative flex h-full min-h-screen w-full flex-col justify-end">
+<div class="flex flex-col rounded-t-xl bg-background-light dark:bg-background-dark shadow-2xl">
+<div class="p-6">
+<div class="flex flex-col gap-6 rounded-lg bg-white dark:bg-gray-800/50 p-6 shadow-lg">
+<p class="text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">Find a NOVASAFE Route</p>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col">
+<p class="pb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Starting Point</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input h-14 flex-1 resize-none overflow-hidden rounded-r-none border border-r-0 border-gray-300 bg-gray-50 p-4 text-base font-normal leading-normal text-gray-900 placeholder:text-gray-500 focus:border-primary focus:outline-0 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" value="Current Location"/>
+<div class="flex items-center justify-center rounded-r-lg border border-l-0 border-gray-300 bg-gray-50 px-4 text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">
+<span class="material-symbols-outlined text-2xl">my_location</span>
+</div>
+</div>
+</label>
+<div class="relative">
+<label class="flex flex-col">
+<p class="pb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Destination</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-gray-300 bg-gray-50 p-4 text-base font-normal leading-normal text-gray-900 placeholder:text-gray-500 focus:border-primary focus:outline-0 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" placeholder="Enter destination"/>
+</div>
+</label>
+<button class="absolute -top-4 right-0 flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 dark:bg-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined text-lg">swap_vert</span>
+</button>
+</div>
+</div>
+<div class="pt-2">
+<button class="flex h-14 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary px-5 text-base font-bold leading-normal tracking-wide text-white transition hover:bg-opacity-90">
+<span class="truncate">Find Safest Route</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-6 pb-6">
+<p class="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">Recent Searches</p>
+<div class="flex flex-col gap-3">
+<div class="flex cursor-pointer items-center gap-4 rounded-lg bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-700/50">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">history</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-gray-900 dark:text-white">Connaught Place</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">New Delhi, Delhi</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">arrow_forward_ios</span>
+</div>
+<div class="flex cursor-pointer items-center gap-4 rounded-lg bg-white p-4 transition-colors hover:bg-gray-100 dark:bg-gray-800/50 dark:hover:bg-gray-700/50">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-700">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">history</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-gray-900 dark:text-white">Indira Gandhi International Airport</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">New Delhi, Delhi</p>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safety App Intro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#137fec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark font-display" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="flex flex-col flex-grow">
+<div class="@container flex-grow">
+<div class="bg-cover bg-center flex flex-col justify-between overflow-hidden min-h-[60vh]" data-alt="Stylized map of India with glowing routes, conveying safety and navigation." style='background-image: linear-gradient(0deg, #101922 0%, rgba(16, 25, 34, 0) 50%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDjbZ9EZeFjarbaFMnBczNWwr4pSfZf8iXms47CJN9F7ioSDVUjk-72FeTiW8Zvo61evDdg59JtJXiacf3UOHRe3lfP0BIrCnm4-QQL0QTxwfJmpIwe-uQINiR84_JqaHVqBwrbxmEEz8sAVD9IOA21dMwPJ7lpMcE0BtxbE4Gn0JRxJv3pqUxctQ2Ta8wLNE0XqPAMVl2eiI8tAK25kYuGtGGdZSnTnEL5Z6Ozi49gmdEr4akPYDVqbXcsBN4GjDkP3MjeLy23JWfv");'>
+<div class="flex p-6">
+<p class="text-white tracking-light text-[28px] font-bold leading-tight">NOVASAFE</p>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 px-4 py-6 sm:px-6 flex flex-col items-center bg-background-light dark:bg-background-dark">
+<h1 class="text-slate-900 dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center pb-3">Navigate with Confidence</h1>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal pb-6 text-center max-w-sm">Real-time safety data to guide you through India's streets.</p>
+</div>
+</div>
+<div class="sticky bottom-0 w-full bg-background-light dark:bg-background-dark pt-4 pb-6 px-4">
+<div class="flex flex-col items-center gap-4">
+<button class="flex w-full max-w-md cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Get Started</span>
+</button>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal text-center">Already have an account? <a class="font-medium text-primary underline" href="#">Sign In</a></p>
+</div>
+</div>
+</div>
+</body></html>
